@@ -35,6 +35,11 @@ const routes = [
     title: 'Editar cliente',
     meta: { requiredAuth: true },
   },
+  router.beforeEach(async (to, from, next) => {
+    if (to.meta.requiredAuth && !Storage.obterTokenNaStorage()) {
+      next({ name: 'loginAuth' });
+    } else next();
+  })
 ]
 
 const router = new VueRouter({
