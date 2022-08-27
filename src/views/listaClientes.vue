@@ -71,37 +71,37 @@ export default {
       this.$router.push({ name: "NovoCliente" })
     },
 
-    editarCliente(cliente){
-      this.$router.push({ name: "EditarCliente", params: {id: cliente.id} })
+    editarCliente(cliente) {
+      this.$router.push({ name: "EditarCliente", params: { id: cliente.id } })
 
     },
 
     excluirCliente(cliente) {
-      if(confirm(`Deseja excluir o cliente "${cliente.id} - ${cliente.name}"?`)){
+      if (confirm(`Deseja excluir o cliente "${cliente.id} - ${cliente.name}"?`)) {
 
         clienteService.deletar(cliente.id)
-        .then(() => {
-          let indice = this.clientes.findIndex(c => c.id == cliente.id);
-          this.cliente.slice(indice, 1);
-          setTimeout(() =>{
-            alert("Cliente excluido com sucesso!");
-          },500);
-        })
-        .catch(error => {
-          console.log(error);
-        })
-    }
+          .then(() => {
+            let indice = this.clientes.findIndex(c => c.id == cliente.id);
+            this.cliente.slice(indice, 1);
+            setTimeout(() => {
+              alert("Cliente excluido com sucesso!");
+            }, 500);
+          })
+          .catch(error => {
+            console.log(error);
+          })
+      }
     },
 
-    ordenasClientes(a, b){
-        return (a.id < b.id) ? -1 : (a.id > b.id) ? 1 : 0;
+    ordenasClientes(a, b) {
+      return (a.id < b.id) ? -1 : (a.id > b.id) ? 1 : 0;
     },
 
     obterTodosOsClientes() {
 
       clienteService.obterTodos()
         .then(response => {
-           let clientes = response.data.map((c) => new Cliente(c));
+          let clientes = response.data.map((c) => new Cliente(c));
 
           this.clientes = clientes.sort(this.ordenarClientes).reverse();
         })

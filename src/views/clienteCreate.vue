@@ -55,11 +55,11 @@
 
             <div class="container">
                 <div class="btn-group float-right">
-                <button @click="salvarCliente" class="btn btn-primary mr-4">Salvar</button>
-                
-                <button @click="cancelarAcao" class="btn btn-default">
-                    Cancelar
-                </button>
+                    <button @click="salvarCliente" class="btn btn-primary mr-4">Salvar</button>
+
+                    <button @click="cancelarAcao" class="btn btn-default">
+                        Cancelar
+                    </button>
                 </div>
             </div>
         </div>
@@ -146,14 +146,14 @@ export default {
 textarea {
     resize: none;
 }
-button{
+
+button {
     width: 90%;
     background-color: #16C5BB;
     color: black;
     border: none;
     cursor: pointer;
     flex-direction: row;
-    
-}
 
+}
 </style>

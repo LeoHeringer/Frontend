@@ -8,14 +8,6 @@ function login(email, password){
     });
 }
 
-// function logout(){
-//     return new Promise((resolve, reject) => {
-//         return api.delete(`/logout`)
-//         .then(response => resolve(response))
-//         .catch(error => reject(error));
-//     });
-// }
-
 function obterTodos(){
     return new Promise((resolve, reject) => {
         return api.get(`/users`)
@@ -34,7 +26,6 @@ function obterPorId(id){
 
 export default {
     login,
-    // logout,
     obterTodos,
     obterPorId
 }

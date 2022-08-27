@@ -1,7 +1,7 @@
 import perfil from "./perfil";
 
 export default class Cliente {
-    constructor(obj){
+    constructor(obj) {
         obj = obj || {};
         this.id = obj.id;
         this.name = obj.name;
@@ -12,16 +12,16 @@ export default class Cliente {
         this.perfil = new perfil(obj.perfil);
     }
 
-    modeloValidoLogin(){
-        return !! (this.email && this.senha);
+    modeloValidoLogin() {
+        return !!(this.email && this.senha);
     }
 
-    modeloValidoParaCadastro(){
-        return !! this.name
+    modeloValidoParaCadastro() {
+        return !!this.name
     }
 
-    modeloValidoParaAtualizar(){
-        return !! (this.id && this.name)
+    modeloValidoParaAtualizar() {
+        return !!(this.id && this.name)
     }
-    
+
 }

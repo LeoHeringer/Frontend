@@ -1,28 +1,28 @@
 import Usuario from "../models/clienteModels";
 
-function salvarUsuarioNaStorage(usuario){
+function salvarUsuarioNaStorage(usuario) {
     let usuarioString = JSON.stringify(usuario);
     localStorage.setItem('usuario', usuarioString);
 }
 
-function obterUsuarioNaStorage(){
+function obterUsuarioNaStorage() {
     let usuarioString = localStorage.getItem('usuario');
     return new Usuario(JSON.parse(usuarioString));
 }
 
-function salvarTokenNaStorage(token){
+function salvarTokenNaStorage(token) {
     localStorage.setItem('token', token);
 }
 
-function obterTokenNaStorage(){
+function obterTokenNaStorage() {
     return localStorage.getItem('token');
 }
 
-function removerTokenNaStorage(){
+function removerTokenNaStorage() {
     localStorage.removeItem('token');
 }
 
-function removerUsuarioNaStorage(){
+function removerUsuarioNaStorage() {
     localStorage.removeItem('usuario');
 }
 

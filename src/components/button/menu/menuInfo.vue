@@ -4,16 +4,15 @@
             <img src="@/assets/faustinoIMG.png" alt="Logo">
         </li>
         <li>
-            <a @click="() => this.$router.push({path: '/listaClientes'})">Clientes</a>
+            <a @click="() => this.$router.push({ path: '/listaClientes' })">Clientes</a>
         </li>
         <li>
-            <a @click="() => this.$router.push({path: '/'})">Sair</a>
+            <a @click="() => this.$router.push({ path: '/' })">Sair</a>
         </li>
     </ul>
 </template>
 
 <style scoped>
-
 ul {
     list-style-type: none;
     margin: 0;
@@ -31,7 +30,7 @@ li:first-child {
     margin-left: 10px;
 }
 
-li:last-child{
+li:last-child {
     float: right;
     margin-right: 10px;
 }
@@ -50,9 +49,8 @@ li a:hover {
 
 }
 
-img{
+img {
     width: 55px;
     height: 55px;
 }
-
 </style>

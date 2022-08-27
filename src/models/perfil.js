@@ -1,5 +1,5 @@
 export default class Usuario {
-    constructor(obj){
+    constructor(obj) {
         obj = obj || {};
         this.id = obj.id;
     }

@@ -3,18 +3,18 @@
 </template>
 
 <script>
-    export default {
-        name:'buttonLogin',
-        props:{
-            value: {type: String, require},
-            callback: {type: Function, default: () => {}}
-        }
-
+export default {
+    name: 'buttonLogin',
+    props: {
+        value: { type: String, require },
+        callback: { type: Function, default: () => { } }
     }
+
+}
 </script>
 
 <style>
-button{
+button {
     width: 100%;
     background-color: #16C5BB;
     color: black;
