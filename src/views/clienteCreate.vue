@@ -35,8 +35,8 @@
             </div>
             <div class="col-sm-4">
                 <div class="from-group">
-                    <label for="id">senha</label>
-                    <input id="cpf" v-model="cliente.password" type="text" class="form-control" />
+                    <label for="id">Senha</label>
+                    <input id="senha" v-model="cliente.password" type="password" class="form-control" />
                 </div>
             </div>
             <div class="col-sm-12">
@@ -55,11 +55,11 @@
 
             <div class="container">
                 <div class="btn-group float-right">
-                    <button @click="salvarCliente" class="btn btn-primary mr-4">Salvar</button>
-
-                    <button @click="cancelarAcao" class="btn btn-default">
+                    <button @click="cancelarAcao" class="btn btn-default mr-4">
                         Cancelar
                     </button>
+                    <button @click="salvarCliente" class="btn btn-primary mr-4">Salvar</button>
+
                 </div>
             </div>
         </div>
@@ -103,7 +103,7 @@ export default {
 
         cadastrarCliente() {
             if (!this.cliente.modeloValidoParaCadastro()) {
-                alert("O nome do cliente é obrigatorio para o cadastro.");
+                alert("Preencha todos os campos.");
                 return;
             }
 

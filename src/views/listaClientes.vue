@@ -136,6 +136,6 @@ export default {
 .icones-tabela {
   margin: 5px;
   cursor: pointer;
-  color: var(--cor-secundaria);
+  color: rgba(0, 0, 0, 0.8);
 }
 </style>

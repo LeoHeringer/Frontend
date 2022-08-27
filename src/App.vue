@@ -21,7 +21,7 @@ export default {
 
 :root {
   --cor-primaria: #E0E0E0;
-  --cor-secundaria: #757575;
+  --cor-secundaria: rgba(0, 0, 0, 0.8);
 }
 
 body {

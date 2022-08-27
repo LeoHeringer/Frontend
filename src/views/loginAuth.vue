@@ -1,7 +1,7 @@
 <template>
     <div class="box-login" id="loginAuth">
         <div class="logo">
-            <img src="@/assets/faustinoGIF.gif" alt="Logo">
+            <img src="@/assets/faustinoIMG.png" alt="Logo">
         </div>
         <div>
             <div>
@@ -10,7 +10,7 @@
             </div>
             <div>
                 <label for="Senha"></label>
-                <input type="password" placeholder="Password" v-model="usuario.password">
+                <input type="password" placeholder="Senha" v-model="usuario.password">
             </div>
             <button @click="login()">Login</button>
         </div>
@@ -48,6 +48,7 @@ export default {
                 })
                 .catch(error => {
                     console.log(error);
+                    alert("Email ou senha incorretos.");
                 })
         }
     }
