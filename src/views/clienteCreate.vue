@@ -8,38 +8,38 @@
         </div>
 
         <div class="row">
-            <div class="col-sm-2">
+            <div class="col-sm-2 mt-3">
                 <div class="from-group">
                     <label for="id">Código</label>
                     <input id="id" v-model="cliente.id" type="text" disabled class="form-control" />
                 </div>
             </div>
 
-            <div class="col-sm-10">
+            <div class="col-sm-10 mt-3">
                 <div class="from-group">
                     <label for="id">Nome</label>
                     <input id="nome" v-model="cliente.name" type="text" class="form-control" />
                 </div>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-4 mt-3">
                 <div class="from-group">
                     <label for="id">E-mail</label>
                     <input id="email" v-model="cliente.email" type="text" class="form-control" />
                 </div>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-4 mt-3">
                 <div class="from-group">
                     <label for="id">CPF</label>
                     <input id="cpf" v-model="cliente.cpf" type="text" class="form-control" />
                 </div>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-4 mt-3">
                 <div class="from-group">
                     <label for="id">Senha</label>
                     <input id="senha" v-model="cliente.password" type="password" class="form-control" />
                 </div>
             </div>
-            <div class="col-sm-12">
+            <div class="col-sm-12 mt-3">
                 <div class="from-group">
                     <label for="observacao">Observação</label>
                     <textarea id="observacao" v-model="cliente.observacao" type="text" class="form-control"
@@ -58,7 +58,7 @@
                     <button @click="cancelarAcao" class="btn btn-default mr-4">
                         Cancelar
                     </button>
-                    <button @click="salvarCliente" class="btn btn-primary mr-4">Salvar</button>
+                    <button @click="salvarCliente" class="btn btn-primary">Salvar</button>
 
                 </div>
             </div>
