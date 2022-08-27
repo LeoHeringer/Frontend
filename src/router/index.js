@@ -45,9 +45,16 @@ const router = new VueRouter({
 });
 
 router.beforeEach(async (to, from, next) => {
-  if (to.meta.requiredAuth && !utilsStorage.obterTokenNaStorage()) {
-    next({ name: 'loginAuth' });
-  } else next();
+  const userIsLoggedIn = !!utilsStorage.obterTokenNaStorage();
+  if (to.meta.requiredAuth) {
+    if (!userIsLoggedIn) {
+      next({ name: 'loginAuth' });
+    }
+  } else if (userIsLoggedIn) {
+    next({ name: 'ListaClientes' });
+  }
+
+  next();
 });
 
 export default router;
