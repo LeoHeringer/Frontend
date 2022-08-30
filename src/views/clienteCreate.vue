@@ -39,13 +39,6 @@
                     <input id="senha" v-model="cliente.password" type="password" class="form-control" />
                 </div>
             </div>
-            <div class="col-sm-12 mt-3">
-                <div class="from-group">
-                    <label for="observacao">Observação</label>
-                    <textarea id="observacao" v-model="cliente.observacao" type="text" class="form-control"
-                        rows="4"></textarea>
-                </div>
-            </div>
         </div>
 
         <div class="row">
@@ -156,5 +149,8 @@ button {
     cursor: pointer;
     flex-direction: row;
 
+}
+.titulo{
+    margin-top: 5%;
 }
 </style>

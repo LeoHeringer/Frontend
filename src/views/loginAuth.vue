@@ -3,7 +3,7 @@
         <div class="logo">
             <img src="@/assets/faustinoIMG.png" alt="Logo">
         </div>
-        <div>
+        <div> 
             <div>
                 <label for="E-mail"></label>
                 <input type="email" placeholder="exemplo@gmail.com" v-model="usuario.email">
@@ -62,7 +62,7 @@ export default {
     border: 3px solid #16C5BB;
     transition: box-shadow;
     border-radius: 8px;
-    margin-top: 100px;
+    margin-top: 8%;
     padding: 30px;
     background-color: rgba(0, 0, 0, 0.8);
 
