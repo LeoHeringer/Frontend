@@ -96,31 +96,57 @@ export default {
 
         cadastrarCliente() {
             if (!this.cliente.modeloValidoParaCadastro()) {
-                alert("Preencha todos os campos.");
+                this.$swal({
+                    icon: 'warning',
+                    title: 'Preencha todos os campos.',
+                    confirmButtonColor: '#16C5BB',
+                    animate: true
+                })
                 return;
             }
 
             clienteService.cadastrar(this.cliente)
                 .then(() => {
-                    alert("Cliente cadastrado com sucesso!");
+                    this.$swal({
+                        icon: 'success',
+                        title: 'Cliente cadastrado com sucesso!',
+                        confirmButtonColor: '#16C5BB',
+                        animate: true
+                    })
                     this.cliente = new ClienteCreate();
                     this.$router.push({ name: "ListaClientes" })
                 })
                 .catch(error => {
                     console.log(error)
-                    alert("Preencha todos os campos.");
+                    
+                    this.$swal({
+                        icon: 'warning',
+                        title: 'Preencha todos os campos corretamente.',
+                        confirmButtonColor: '#16C5BB',
+                        animate: true
+                    })
                 })
         },
 
         atualizarCliente() {
             if (!this.cliente.modeloValidoParaAtualizar()) {
-                alert("O Código e o nome do cliente é obrigatorio para o cadastro.");
+                this.$swal({
+                    icon: 'warning',
+                    title: 'Nome, email e cpf são obrigatórios.',
+                    confirmButtonColor: '#16C5BB',
+                    animate: true
+                });
                 return;
 
             }
             clienteService.atualizar(this.cliente)
                 .then(() => {
-                    alert("Cliente atualizado com sucesso!")
+                    this.$swal({
+                        icon: 'success',
+                        title: 'Cliente atualizado com sucesso!',
+                        confirmButtonColor: '#16C5BB',
+                        animate: true
+                    })
                     this.$router.push({ name: "ListaClientes" })
                 })
                 .catch(error => {

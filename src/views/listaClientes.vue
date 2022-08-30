@@ -27,10 +27,10 @@
           </thead>
           <tbody>
             <tr v-for="cliente in clientes" :key="cliente.id">
-              <td>{{ cliente.id }}</td>
-              <td>{{ cliente.name }}</td>
-              <td>{{ cliente.email }}</td>
-              <td>{{ cliente.cpf }}</td>
+              <td>{{  cliente.id  }}</td>
+              <td>{{  cliente.name  }}</td>
+              <td>{{  cliente.email  }}</td>
+              <td>{{  cliente.cpf  }}</td>
               <td>
                 <i @click="editarCliente(cliente)" class="fas fa-pencil-alt icones-tabela"></i>
                 <i @click="excluirCliente(cliente)" class="fas fa-trash-alt icones-tabela"></i>
@@ -77,20 +77,37 @@ export default {
     },
 
     excluirCliente(cliente) {
-      if (confirm(`Deseja excluir o cliente "${cliente.id} - ${cliente.name}"?`)) {
 
+      this.$swal({
+        icon: 'question',
+        title: "Deseja excluir o cliente?",
+        text: `Código: ${cliente.id} - Nome: ${cliente.name}`,
+        showCancelButton: true,
+        confirmButtonText: 'Sim',
+        cancelButtonText: 'Não',
+        animate: true,
+        confirmButtonColor: '#16C5BB'
+
+      }).then((result) => {
+        console.log(result)
         clienteService.deletar(cliente.id)
           .then(() => {
             let indice = this.clientes.findIndex(c => c.id == cliente.id);
             this.cliente.slice(indice, 1);
-            setTimeout(() => {
-              alert("Cliente excluido com sucesso!");
-            }, 500);
+
+            this.$swal({
+              icon: 'success',
+              title: 'Cliente deletado com sucesso!',
+              confirmButtonColor: '#16C5BB',
+              animate: true
+            })
           })
           .catch(error => {
             console.log(error);
           })
-      }
+      });
+
+
     },
 
     ordenasClientes(a, b) {

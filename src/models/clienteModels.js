@@ -7,7 +7,6 @@ export default class Cliente {
         this.name = obj.name;
         this.email = obj.email;
         this.password = obj.password;
-        this.observacao = obj.observacao;
         this.cpf = obj.cpf;
         this.perfil = new perfil(obj.perfil);
     }

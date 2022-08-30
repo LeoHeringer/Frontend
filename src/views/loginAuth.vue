@@ -48,7 +48,12 @@ export default {
                 })
                 .catch(error => {
                     console.log(error);
-                    alert("Email ou senha incorretos.");
+                    this.$swal({
+                        icon: 'error',
+                        title: 'Email ou senha incorretos.',
+                        confirmButtonColor: '#16C5BB',
+                        animate: true
+                    })
                 })
         }
     }
