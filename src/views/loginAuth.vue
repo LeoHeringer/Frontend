@@ -67,7 +67,7 @@ export default {
     border: 3px solid #16C5BB;
     transition: box-shadow;
     border-radius: 8px;
-    margin-top: 8%;
+    margin-top: 10%;
     padding: 30px;
     background-color: rgba(0, 0, 0, 0.8);
 
